@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2022.3">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 6.5px 0.0px; font: 13.0px Helvetica; color: #434343; -webkit-text-stroke: #434343; min-height: 16.0px}
+    p.p2 {margin: 0.0px 0.0px 6.5px 0.0px; font: 13.0px Helvetica; color: #434343; -webkit-text-stroke: #434343}
+    p.p3 {margin: 0.0px 0.0px 6.5px 0.0px; font: 13.0px Helvetica; color: #e49608; -webkit-text-stroke: #e49608}
+    span.s1 {font-kerning: none}
+    span.s2 {font-kerning: none; background-color: #ffffff}
+    span.s3 {font-kerning: none; color: #434343; background-color: #ffffff; -webkit-text-stroke: 0px #434343}
+    span.s4 {font-kerning: none; color: #e49608; -webkit-text-stroke: 0px #e49608}
+    span.s5 {font-kerning: none; color: #434343; -webkit-text-stroke: 0px #434343}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s2">Yêu cầu: </span></p>
+<p class="p2"><span class="s2">Phần 1:  Tạo 1 website bán hàng với các chức năng sau đây</span></p>
+<p class="p2"><span class="s2"> 0. Xây dựng lớp đối tượng Product.(Check Api xem backend trả về product như thế nào)</span><span class="s1"><br>
+</span></p>
+<p class="p2"><span class="s2"> 1.Hiển thị danh sách sản phẩm cho khách hàng, Gợi Ý:tạo một mảng ProductList ngoài global, call axios lấy danh sách sản phẩm từ database,gán mảng sản phẩm trả về vào biến ProductList, viết hàm tạo giao diện. (api lấy danh sách sản phẩm nằm dưới cùng). Hàm tạo giao diện giống y chang hàm tạo bảng, chỉ khác thay vì tạo &lt;tr&gt;&lt;/tr&gt; thì giờ tạo cái &lt;div&gt; cho từng sản phẩm</span></p>
+<p class="p2"><span class="s2">   2.tạo một ô select cho phép người dùng filter theo loại sản phẩm, ô select có 2 option là samsung và iphone, viết hàm gắn vào sự kiện onChange của select</span></p>
+<p class="p2"><span class="s2">Gợi ý: dựa vào thuộc tính Type của đối tượng sản phẩm, có 2 loại: samsung hoặc iphone. ví dụ: nếu người dùng chon samsung, tiến hành duyệt vòng for, lọc ra các sản phẩm có type === "samsung",bỏ vào 1 mảng , sau đó gọi hàm tạo giao diện động dựa theo mảng vừa tìm được</span></p>
+<p class="p2"><span class="s2">   3.Cho phép người dùng chọn sản phẩm bỏ vào giỏ hàng</span></p>
+<p class="p2"><span class="s2"> (gợi ý: - tạo một mảng giỏ hàng ngoài global, khi người dùng click nút ADD TO CART, tiến hành truyền vào id, tìm sản phẩm trong ProductList, ví dụ tìm được index  = 2, thì push nguyên đối tượng ProductList[2] vào mảng giỏ hàng)</span></p>
+<p class="p2"><span class="s2">   4.Không push sản phẩm mình chọn vào cart vì không có số lượng , tạo một đối tượng mới có đinh dang sau rồi push vào mảng cart {product: {đối tượng sản phẩm cần push}, quantity: 'bla bla'}  .Vd : var cartItem = {product: {id: 1, price: 10, name : 'samsung a10' }, quantity: 1}</span></p>
+<p class="p2"><span class="s2">   5. Khi push vào kiểm tra xem, nếu sản phẩm chưa có trong giỏ hàng thì push mới vào với quantity là 1, nếu có rồi ko push nữa mà chỉ tăng quantity lên 1</span></p>
+<p class="p2"><span class="s2">   5.1 In giỏ hàng ra màn hình, viết hàm renderCart, duyệt mảng giỏ hàng có bao nhiêu sản phẩm thì tạo ra bấy nhiêu &lt;tr&gt; tương ứng.</span></p>
+<p class="p2"><span class="s2">  6. Trong giao diện giỏ hàng, cho phép người dùng chỉnh sửa số lượng (gợi ý: cho 2 nút tăng giảm), viết hàm gắn voà 2 nút đó, khi nhấn vào thì truyền vào id, tìm trong mảng giỏ hàng xem sản phẩm đó nằm ở đâu, lấy quantity ra tăng hoặc giảm , sau đó render lại giao diện</span></p>
+<p class="p2"><span class="s2">  7. In ra tổng tiền ra giao diện. Trong hàm renderCart, tính tổng giá tiền của tất cả sản phẩm và hiện ra (giá tiền * số lượng)</span></p>
+<p class="p2"><span class="s2">  8. Người dùng nhấn nút thanh toán, clear giỏ hàng, set mảng giỏ hàng về []</span></p>
+<p class="p2"><span class="s2">  9. Lưu giỏ hàng vào localstorage , lần sau khi vào trang sẽ load lên lại</span></p>
+<p class="p2"><span class="s2">  10. Cho phép người dùng remove sản phẩm ra khỏi giỏ hàng, giống như xoá nhân viên</span><span class="s1"><br>
+</span></p>
+<p class="p2"><span class="s2">Phần 2: (tạo 1 source code riêng để làm) Phần quản trị</span></p>
+<p class="p2"><span class="s2">1.Thực hiện các chức năng : thêm xoá sửa sản phẩm (tương tự thêm xoá sửa nhân viên với các api dưới)</span></p>
+<p class="p2"><span class="s2">API products:</span></p>
+<p class="p2"><span class="s2"> - GET https://5bd2959ac8f9e400130cb7e9.mockapi.io/api/products : lấy danh sách products</span></p>
+<p class="p3"><span class="s3"> - GET <a href="https://5bd2959ac8f9e400130cb7e9.mockapi.io/api/products"><span class="s4">https://5bd2959ac8f9e400130cb7e9.mockapi.io/api/products</span></a>/${id} : lấy thông tin 1 product theo id</span><span class="s5"><br>
+</span></p>
+<p class="p2"><span class="s2">   VD: product có id là 123 =&gt; api là:  <a href="https://5bd2959ac8f9e400130cb7e9.mockapi.io/api/products"><span class="s4">https://5bd2959ac8f9e400130cb7e9.mockapi.io/api/products</span></a>/123 .Ở dưới cũng tương tự nha</span></p>
+<p class="p3"><span class="s3"> - POST <a href="https://5bd2959ac8f9e400130cb7e9.mockapi.io/api/products"><span class="s4">https://5bd2959ac8f9e400130cb7e9.mockapi.io/api/products</span></a>: Thêm product</span><span class="s5"><br>
+</span></p>
+<p class="p3"><span class="s3"> - PUT <a href="https://5bd2959ac8f9e400130cb7e9.mockapi.io/api/products"><span class="s4">https://5bd2959ac8f9e400130cb7e9.mockapi.io/api/products</span></a>/${id} : cập nhật product theo id</span><span class="s5"><br>
+</span></p>
+<p class="p3"><span class="s3"> - DELETE <a href="https://5bd2959ac8f9e400130cb7e9.mockapi.io/api/products"><span class="s4">https://5bd2959ac8f9e400130cb7e9.mockapi.io/api/products</span></a>/${id} : Xoá product theo id</span></p>
+</body>
+</html>
