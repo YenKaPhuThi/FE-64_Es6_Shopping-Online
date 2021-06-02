@@ -9,7 +9,7 @@ const getEleById = (ele) => {
 const renderCartItem = (arrProduct) => {
   var cartItem = "";
 
-  for (let i = 0; i < arrProduct.length - 1; i++) {
+  for (let i = 0; i < arrProduct.length; i++) {
     const pd = arrProduct[i];
     const product = new Product(
       pd.id,
