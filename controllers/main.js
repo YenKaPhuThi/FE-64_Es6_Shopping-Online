@@ -9,7 +9,7 @@ const getEleById = (ele) => {
 const renderCartItem = (arrProduct) => {
   var cartItem = "";
 
-  for (let i = 0; i < arrProduct.length; i++) {
+  for (let i = 0; i < arrProduct.length - 1; i++) {
     const pd = arrProduct[i];
     const product = new Product(
       pd.id,
@@ -59,7 +59,7 @@ async function getDataProductApi() {
 
     renderCartItem(result.data);
   } catch (error) {
-    console.log(error.response.data);
+    console.log(error.data);
   }
 }
 
