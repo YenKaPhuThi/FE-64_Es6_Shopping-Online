@@ -29,3 +29,5 @@ class Product {
     this.rating = rating;
   }
 }
+
+export default Product;
