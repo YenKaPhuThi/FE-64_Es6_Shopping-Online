@@ -50,20 +50,17 @@ const renderCartItem = (arrProduct) => {
 };
 
 // Get products api
-const getDataProductApi = () => {
-  const promise = axios({
-    url: "https://5bd2959ac8f9e400130cb7e9.mockapi.io/api/products",
-    method: "get",
-  });
+async function getDataProductApi() {
+  try {
+    const result = await axios({
+      url: "https://5bd2959ac8f9e400130cb7e9.mockapi.io/api/products",
+      method: "get",
+    });
 
-  promise.then(function (result) {
-    console.log(result.data);
     renderCartItem(result.data);
-  });
-
-  promise.catch(function (error) {
-    console.log(error.data);
-  });
-};
+  } catch (error) {
+    console.log(error.response.data);
+  }
+}
 
 getDataProductApi();
