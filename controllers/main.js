@@ -28,21 +28,21 @@ const renderCartItem = (arrProduct) => {
     );
 
     cartItem += `
-    <div class="col-md-4">
-      <div class="card p-2">
-        <img
-          src="${product.img}"
-          class="card-img-top"
-          alt="Product img"
-        />
-        <div class="card-body p-0">
-          <h5 class="card-title">${product.name}</h5>
-          <p class="card-text">${product.desc}
-          </p>
-          <a href="#" class="btn btn-success btn-block">Cart</a>
+      <div class="col-md-4">
+        <div class="card p-2 my-3">
+          <img
+            src="${product.img}"
+            class="card-img-top"
+            alt="Product img"
+          />
+          <div class="card-body p-0">
+            <h5 class="card-title">${product.name}</h5>
+            <p class="card-text">${product.desc}
+            </p>
+            <a href="#" class="btn btn-success btn-block">Cart</a>
+          </div>
         </div>
       </div>
-    </div>
     `;
   }
 
