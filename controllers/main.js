@@ -5,6 +5,9 @@ const getEleById = (ele) => {
   return document.getElementById(ele);
 };
 
+// Global variables
+let productList = [];
+
 // Render cart item
 const renderCartItem = (arrProduct) => {
   var cartItem = "";
@@ -57,7 +60,9 @@ async function getDataProductApi() {
       method: "get",
     });
 
-    renderCartItem(result.data);
+    productList = result.data;
+
+    renderCartItem(productList);
   } catch (error) {
     console.log(error.data);
   }
